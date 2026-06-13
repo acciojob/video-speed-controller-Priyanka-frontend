@@ -62,7 +62,7 @@ function rewindVideo() {
 
 // Skip 25 seconds
 function skipVideo() {
-  video.currentTime += 25;
+  video.currentTime += parseFloat(this.dataset.skip);
 }
 
 // Event Listeners
@@ -79,7 +79,7 @@ progress.addEventListener('click', scrub);
 volume.addEventListener('input', handleVolume);
 playbackSpeed.addEventListener('input', handlePlaybackSpeed);
 
-rewind.addEventListener('click', rewindVideo);
+rewind.addEventListener('click', skipVideo);
 skip.addEventListener('click', skipVideo);
 
 

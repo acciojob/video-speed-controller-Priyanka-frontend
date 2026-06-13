@@ -10,7 +10,7 @@ const inputs = document.querySelectorAll('.controls input');
 
 
 
-const player = document.querySelector('.player');
+const player = document.querySelector('.player__video');
 const video = player.querySelector('.viewer');
 const progress = player.querySelector('.progress');
 const progressFilled = player.querySelector('.progress__filled');

@@ -12,10 +12,10 @@ const inputs = document.querySelectorAll('.controls input');
 
 // Get all elements
 const player = document.querySelector('.player');
-const video = player.querySelector('video');
+const video = player.querySelector('.player__video');
 const progress = player.querySelector('.progress');
 const progressFilled = player.querySelector('.progress__filled');
-const playerButton = player.querySelector('.player__button');
+const toggle = player.querySelector('.toggle');
 const rewindButton = player.querySelector('.rewind');
 const forwardButton = player.querySelector('.forward');
 const volumeInput = player.querySelector('.volume');
@@ -28,14 +28,14 @@ function togglePlayPause() {
     const isPlaying = video.paused;
     if (isPlaying) {
         video.play();
-        playerButton.textContent = '❚ ❚';
+        toggle.textContent = '❚ ❚';
     } else {
         video.pause();
-        playerButton.textContent = '►';
+        toggle.textContent = '►';
     }
 }
 
-playerButton.addEventListener('click', togglePlayPause);
+toggle.addEventListener('click', togglePlayPause);
 
 // Video play/pause on space key
 document.addEventListener('keydown', (e) => {
@@ -84,15 +84,17 @@ forwardButton.addEventListener('click', () => {
 
 // Update button text when video ends or starts
 video.addEventListener('play', () => {
-    playerButton.textContent = '❚ ❚';
+    toggle.textContent = '❚ ❚';
 });
 
 video.addEventListener('pause', () => {
-    playerButton.textContent = '►';
+    toggle.textContent = '►';
 });
 
 // Initialize volume
 video.volume = 0.5;
+
+
 
 
 
